@@ -1,7 +1,7 @@
 # Prolog Matrix Utilities Package
     
-    Authors: Ali Al-Bayaty   **albayaty@pdx.edu**
-             Marek Perkowski **h8mp@pdx.edu**
+    Authors: Ali Al-Bayaty   < albayaty@pdx.edu >
+             Marek Perkowski < h8mp@pdx.edu >
              Electrical & Computer Engineering Dept.
              Portland State University
     Version: 1.0
