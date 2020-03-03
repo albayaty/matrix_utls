@@ -1,10 +1,10 @@
 # Prolog Matrix Utilities Package
-
-    Version: 1.0
+    
     Authors: Ali Al-Bayaty   <albayaty@pdx.edu>
              Marek Perkowski <h8mp@pdx.edu>
              Electrical & Computer Engineering Dept.
              Portland State University
+    Version: 1.0
     Date:    02/20/2020
 
 #  matrix_utls
@@ -25,14 +25,14 @@ This package consists of:
 
 ## Installation
 
-### Checking Step
+### Checking Step:
 
 Search for the package `matrix_utls` from SWI-Prolog command line using the `pack_list/1` command. Note that, the leading `i` indicates that this package is already installed, and the leading `p` indicates that this package is known by the server.
 ```
 ?- pack_list(matrix_utls).
 ```
 
-### Loading Step
+### Loading Step:
 
 After finding the package `matrix_utls` on the server, then it can be installed using the `pack_install/2` command.
 ```
