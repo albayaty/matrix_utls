@@ -1,6 +1,27 @@
-# matrix_utls
+# Prolog Matrix Utilities Package
 
-Matrix utilities package consists of Kronecker (Tensor) product, Hadamard (Element-Wise) product, creating (MxN) matrix of empty cells, creating (MxN) matrix of a unique (int/float/letters) value, creating (MxN) matrix of random (int/float) values, creating (MxM) Identity matrix, Scalar-by-Vector multiplication, Scalar-by-Matrix multiplication, Vector-by-Vector multiplication, Vector-by-Matrix multiplication, Matrix-by-Vector multiplication, and Matrix-by-Matrix multiplication.
+    Version: 1.0
+    Authors: Ali Al-Bayaty   <albayaty@pdx.edu>
+             Marek Perkowski <h8mp@pdx.edu>
+             Electrical & Computer Engineering Dept.
+             Portland State University
+    Date:    02/20/2020
+
+#  matrix_utls
+
+This package consists of:
+1.  Kronecker (Tensor) product,
+2.  Hadamard (Element-Wise) product,
+3.  Creating (MxN) matrix of empty cells,
+4.  Creating (MxN) matrix of unique (int/float/letters) value,
+5.  Creating (MxN) matrix of random (int/float) values,
+6.  Creating Identity (MxM) matrix,
+7.  Scalar-by-Vector multiplication,
+8.  Scalar-by-Matrix multiplication,
+9.  Vector-by-Vector multiplication,
+10. Vector-by-Matrix multiplication,
+11. Matrix-by-Vector multiplication, and
+12. Matrix-by-Matrix multiplication.
 
 ## Installation
 
