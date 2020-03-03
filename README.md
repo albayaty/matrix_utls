@@ -1,6 +1,6 @@
 #  matrix_utls
 
-This package consists of:
+This SWI-Prolog matrix utilities package consists of:
 1.  Kronecker (Tensor) product, 
 2.  Hadamard (Element-Wise) product, 
 3.  Creating (MxN) matrix of empty cells, 
