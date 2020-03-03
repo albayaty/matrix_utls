@@ -13,7 +13,7 @@ Search for the package `matrix_utls` from SWI-Prolog command line using the `pac
 
 ### Loading Step
 
-After finding the package `matrix_utls` on the server, then it can be installed using the `pack_install/1` command.
+After finding the package `matrix_utls` on the server, then it can be installed using the `pack_install/2` command.
 ```
-?- pack_install(matrix_utls).
+?- pack_install(matrix_utls, [url('https://albayaty.me/wp-content/uploads/matrix_utls-1.0.zip')]).
 ```
