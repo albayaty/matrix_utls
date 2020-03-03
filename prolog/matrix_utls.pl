@@ -13,12 +13,12 @@
 %          10. Vector-by-Matrix multiplication,
 %          11. Matrix-by-Vector multiplication, and
 %          12. Matrix-by-Matrix multiplication.
-% Version: 1.0
+% Version: 1.1
 % Authors: Ali Al-Bayaty   <albayaty@pdx.edu>
 %          Marek Perkowski <h8mp@pdx.edu>
 %          Electrical & Computer Engineering Dept.
 %          Portland State University
-% Date:    02/20/2020
+% Date:    02/25/2020
 % ------------------------------------------------------
 
 
