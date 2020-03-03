@@ -1,27 +1,17 @@
-# Prolog Matrix Utilities Package
-    
-    Authors: Ali Al-Bayaty   < albayaty@pdx.edu >
-             Marek Perkowski < h8mp@pdx.edu >
-             Electrical & Computer Engineering Dept.
-             Portland State University
-    Version: 1.0
-    Date:    02/20/2020
-    URL:     https://www.swi-prolog.org/pack/list?p=matrix_utls
-
 #  matrix_utls
 
 This package consists of:
-1.  Kronecker (Tensor) product,
-2.  Hadamard (Element-Wise) product,
-3.  Creating (MxN) matrix of empty cells,
-4.  Creating (MxN) matrix of a unique (int/float/letters) value,
-5.  Creating (MxN) matrix of random (int/float) values,
-6.  Creating (MxM) Identity matrix,
-7.  Scalar-by-Vector multiplication,
-8.  Scalar-by-Matrix multiplication,
-9.  Vector-by-Vector multiplication,
-10. Vector-by-Matrix multiplication,
-11. Matrix-by-Vector multiplication, and
+1.  Kronecker (Tensor) product, 
+2.  Hadamard (Element-Wise) product, 
+3.  Creating (MxN) matrix of empty cells, 
+4.  Creating (MxN) matrix of a unique (int/float/letters) value, 
+5.  Creating (MxN) matrix of random (int/float) values, 
+6.  Creating (MxM) Identity matrix, 
+7.  Scalar-by-Vector multiplication, 
+8.  Scalar-by-Matrix multiplication, 
+9.  Vector-by-Vector multiplication, 
+10. Vector-by-Matrix multiplication, 
+11. Matrix-by-Vector multiplication, and 
 12. Matrix-by-Matrix multiplication.
 
 ## Installation
@@ -37,5 +27,11 @@ Search for the package `matrix_utls` from SWI-Prolog command line using the `pac
 
 After finding the package `matrix_utls` on the server, then it can be installed using the `pack_install/2` command.
 ```
+% For version 1.0:
 ?- pack_install(matrix_utls, [url('https://albayaty.me/wp-content/uploads/matrix_utls-1.0.zip')]).
+```
+Or,
+```
+% For version 1.1:
+?- pack_install(matrix_utls, [url('https://github.com/albayaty/matrix_utls.git')]).
 ```
