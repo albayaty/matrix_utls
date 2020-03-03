@@ -42,11 +42,8 @@
 :- dynamic outRes/1, subOutRes/1, addRes/1.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ---------------------------------------------------- %
-% Kronecker (Tensor) Product                           %
-% ---------------------------------------------------- %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%! kronecker(A, B, O)
+% Kronecker (Tensor) Product.
 %
 %  Where,
 %  A is the input (multiplicand) matrix of size [GxH],
@@ -86,11 +83,8 @@ get_B_Cells(A_Cell, B_Cell):-
    assert(subOutRes(FinalSubOut)).
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ---------------------------------------------------- %
-% Hadamard (Element-Wise) Product                      %
-% ---------------------------------------------------- %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%! hadamard(A, B, O)
+% Hadamard (Element-Wise) Product.
 %
 %  Where,
 %  A is the input (multiplicand) matrix of size [GxH],
@@ -148,29 +142,41 @@ doCols(A_Row, B_Row, Col_Index):-
    assert(subOutRes(FinalSubOut)).
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ---------------------------------------------------- %
-% Creating/Setting (MxN) Matrix                        %
-% ---------------------------------------------------- %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%! create_empty_matrix(Rows, Cols, Mat)
+% Create 2D matrix of empty cells.
 %
 %  Where,
 %  Rows is the number of rows,
 %  Cols is the number of columns, and
 %  Mat is the resultant matrix of size [Rows x Cols].
 
-% Create 2D matrix of empty cells:
 create_empty_matrix(Rows, Cols, Mat):-
    length(Mat, Rows),
    % Creating temporary Lists based on the number of rows:
    maplist(create_list(Cols), Mat).
 
-% Create 2D matrix and set with a unique (int/float/letters) value:
+
+%! create_val_matrix(Rows, Cols, Mat, Value)
+% Create 2D matrix and set with a unique (int/float/letters) value.
+%
+%  Where,
+%  Rows is the number of rows,
+%  Cols is the number of columns, and
+%  Mat is the resultant matrix of size [Rows x Cols].
+
 create_val_matrix(Rows, Cols, Mat, Value):-
    create_empty_matrix(Rows, Cols, Mat),
    setValue(Value, 1, Mat).
 
-% Create 2D matrix and set with a range of random (int/float) values:
+
+%! create_rand_matrix(Rows, Cols, Mat, Min_Value, Max_Value)
+% Create 2D matrix and set with a range of random (int/float) values.
+%
+%  Where,
+%  Rows is the number of rows,
+%  Cols is the number of columns, and
+%  Mat is the resultant matrix of size [Rows x Cols].
+
 create_rand_matrix(Rows, Cols, Mat, Min_Value, Max_Value):-
    create_empty_matrix(Rows, Cols, Mat),
    setValue([Min_Value, Max_Value], 2, Mat).
@@ -191,11 +197,8 @@ setCells(Value, 2, Mat_Cell):-
    random(Min_Value, Max_Value, Mat_Cell), !.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ---------------------------------------------------- %
-% Creating Identity (MxM) Matrix                       %
-% ---------------------------------------------------- %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%! create_I_matrix(Dim, Mat)
+% Creating Identity (MxM) Matrix.
 %
 %  Where,
 %  Dim is the number of rows and columns, and
@@ -213,11 +216,8 @@ insert_Ones(Zero, Index, Sub_Mat):-
    nth1(Index, Sub_Mat, 1, Zero).
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ---------------------------------------------------- %
-% Scalar-by-Vector Multiplication                      %
-% ---------------------------------------------------- %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%! s_v_multiply(S, V, O)
+% Scalar-by-Vector Multiplication.
 %
 %  Where,
 %  S is the input (multiplicand) scalar (i.e. number),
@@ -228,11 +228,8 @@ s_v_multiply(S, V, O):-
    s_m_multiply(S, V, O).
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ---------------------------------------------------- %
-% Scalar-by-Matrix Multiplication                      %
-% ---------------------------------------------------- %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%! s_m_multiply(S, M, O)
+% Scalar-by-Matrix Multiplication.
 %
 %  Where,
 %  S is the input (multiplicand) scalar (i.e. number),
@@ -265,11 +262,8 @@ do_Cols(S, M_Row, Col_Index):-
    assert(subOutRes(FinalSubOut)).
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ---------------------------------------------------- %
-% Vector-by-Vector Multiplication                      %
-% ---------------------------------------------------- %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%! v_v_multiply(V1, V2, O)
+% Vector-by-Vector Multiplication.
 %
 %  Where,
 %  V1 is the input (multiplicand) vector of size [1xJ] or [Kx1],
@@ -279,11 +273,9 @@ do_Cols(S, M_Row, Col_Index):-
 v_v_multiply(V1, V2, O):-
    m_m_multiply(V1, V2, O).
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ---------------------------------------------------- %
-% Vector-by-Matrix Multiplication                      %
-% ---------------------------------------------------- %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%! v_m_multiply(V, M, O)
+% Vector-by-Matrix Multiplication.
 %
 %  Where,
 %  V is the input (multiplicand) vector of size [1xJ],
@@ -294,11 +286,8 @@ v_m_multiply(V, M, O):-
    m_m_multiply(V, M, O).
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ---------------------------------------------------- %
-% Matrix-by-Vector Multiplication                      %
-% ---------------------------------------------------- %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%! m_v_multiply(M, V, O)
+% Matrix-by-Vector Multiplication.
 %
 %  Where,
 %  M is the input (multiplicand) matrix of size [JxK],
@@ -309,11 +298,8 @@ m_v_multiply(M, V, O):-
    m_m_multiply(M, V, O).
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ---------------------------------------------------- %
-% Matrix-by-Matrix Multiplication                      %
-% ---------------------------------------------------- %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%! m_m_multiply(M1, M2, O)
+% Matrix-by-Matrix Multiplication.
 %
 %  Where,
 %  M1 is the input (multiplicand) matrix of size [GxH],
