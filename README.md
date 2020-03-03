@@ -6,6 +6,7 @@
              Portland State University
     Version: 1.0
     Date:    02/20/2020
+    URL:     <https://www.swi-prolog.org/pack/list?p=matrix_utls>
 
 #  matrix_utls
 
